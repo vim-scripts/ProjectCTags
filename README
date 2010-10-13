@@ -1,0 +1,3 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=3276
+
+ProjectCTags is a plugin that enables you to generate CTags for a project which is under version control. Currently the plugin recognizes git, CVS and SVN version control systems. When you have opened a file, the plugin may either automatically update the corresponding tagfiles or it does this on your command (optional). It creates two tagfiles: One in the current folder, which contains detailed informations such as tags for local variables, and one tagfile in the project folder, which contains a less detailed overview of the globally visible tags in all source files in the versioned tree.
