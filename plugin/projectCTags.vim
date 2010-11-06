@@ -39,6 +39,11 @@
 " For a summary of the available options see the 'Options' paragraph
 
 
+" TODO 
+" * Make output less verbose (Allow to switch it off completely, or only for
+"   those output messages which state that nothing is regenerated)
+
+
 " ############################################
 " ######## Startup Check #####################
 " ############################################
@@ -61,7 +66,11 @@ endif
 
 " The folder separator in the current operating system
 if !exists( 'g:projectCTagsFolderSeparator' )
-  let g:projectCTagsFolderSeparator = "/"
+  if (has('win32') || has('win64'))
+    let g:projectCTagsFolderSeparator = "\\"
+  else
+    let g:projectCTagsFolderSeparator = "/"
+  endif
 endif
 
 " The time in seconds after which the project CTags file is regenerated

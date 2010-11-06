@@ -1,3 +1,14 @@
 This is a mirror of http://www.vim.org/scripts/script.php?script_id=3276
 
-ProjectCTags is a plugin that enables you to generate CTags for a project which is under version control. Currently the plugin recognizes git, CVS and SVN version control systems. When you have opened a file, the plugin may either automatically update the corresponding tagfiles or it does this on your command (optional). It creates two tagfiles: One in the current folder, which contains detailed informations such as tags for local variables, and one tagfile in the project folder, which contains a less detailed overview of the globally visible tags in all source files in the versioned tree.
+ProjectCTags is a plugin that enables you to generate CTags for a project which is under version control. These tags can then be used to Eclipse-like "Jump-To-Definition" or autocompletion of source code. Currently the plugin recognizes source code projects which are versioned with git, CVS and SVN version control systems. This plugin eases the task of generating up-to-date tag files. For people who like to maintain vim project files (Personally I do not like to do that, I just want tags for everything in my project folders), vimscript #3221 might be more appropriate. Once you have generated the tags you can use them in the following ways:
+
+* Jump to definition of the tag (if it is located in your project) under the cursor with Ctrl-]
+* Autocomplete C/C++ source code with vimscript #1520 (See vimscript #1643 for intelligent <Tab> key completion)
+
+When you have opened a file, the plugin may either automatically update the corresponding tagfiles or it does this on your command (optional). It creates two tagfiles: One in the current folder, which contains detailed informations such as tags for local variables, and one tagfile in the project folder, which contains a less detailed overview of the globally visible tags in all source files in the versioned tree. By default it creates tags in the proper format for vimscript #1520.
+
+The generated tags will only cover the code that is contained in your project! STL code etc is not included. If you want autocompletion for STL code you must download vimscript #2358 and insert the following into your .vimrc
+
+set tags += "path/to/stl_tag_file"
+
+If you have questions or suggestions about/for the plugin, feel free to contact me.
