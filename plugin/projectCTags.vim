@@ -393,7 +393,6 @@ endif
 " the current one)
 function GenerateProjectCTags( variant, arguments )
   
-  return <SID>GenerateProjectCTagsImpl( a:variant, a:arguments, 
-            g:projectCTagsMessageVerbosity )
+  return <SID>GenerateProjectCTagsImpl( a:variant, a:arguments, g:projectCTagsMessageVerbosity )
 
 endfunction
